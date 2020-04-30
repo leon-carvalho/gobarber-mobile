@@ -33,7 +33,7 @@ const AuthProvider: React.FC = ({ children }) => {
     async function loadStoragedData(): Promise<void> {
       const [token, user] = await AsyncStorage.multiGet([
         '@GoBarber:token',
-        '@GoBarber: user',
+        '@GoBarber:user',
       ]);
 
       if (token[1] && user[1]) {
