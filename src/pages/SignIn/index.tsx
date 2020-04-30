@@ -14,6 +14,8 @@ import {
   Platform,
 } from 'react-native';
 
+import { useAuth } from '../../hooks/auth';
+
 import getValidationErrors from '../../utils/getValidationsErrors';
 
 import logoImg from '../../assets/logo.png';
@@ -41,6 +43,8 @@ const SignIn: React.FC = () => {
 
   const navigation = useNavigation();
 
+  const { signIn } = useAuth();
+
   const handleSignIn = useCallback(async (data: SignInFormData) => {
     try {
       formRef.current?.setErrors({});
@@ -54,6 +58,11 @@ const SignIn: React.FC = () => {
 
       await schema.validate(data, {
         abortEarly: false,
+      });
+
+      await signIn({
+        email: data.email,
+        password: data.password,
       });
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
