@@ -31,7 +31,7 @@ export interface Provider {
 const Dashboard: React.FC = () => {
   const [providers, setProviders] = useState<Provider[]>([]);
 
-  const { user, signOut } = useAuth();
+  const { user } = useAuth();
   const { navigate } = useNavigation();
 
   useEffect(() => {
@@ -41,8 +41,7 @@ const Dashboard: React.FC = () => {
   }, []);
 
   const navigateToProfile = useCallback(() => {
-    signOut();
-    // navigate('Profile');
+    navigate('Profile');
   }, [navigate]);
 
   const navigateToCreateAppointment = useCallback(
@@ -67,11 +66,11 @@ const Dashboard: React.FC = () => {
 
       <ProvidersList
         data={providers}
-        keyExtractor={(provider) => provider.id}
+        keyExtractor={(provider: Provider) => provider.id}
         ListHeaderComponent={
           <ProvidersListTitle>Cabeleireiros</ProvidersListTitle>
         }
-        renderItem={({ item: provider }) => (
+        renderItem={({ item: provider }: any) => (
           <ProviderContainer
             onPress={() => navigateToCreateAppointment(provider.id)}
           >
