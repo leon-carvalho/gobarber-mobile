@@ -8,13 +8,13 @@ import { Provider } from './index';
 export const Container = styled.View``;
 
 export const Header = styled.View`
-  padding: 24px;
-  padding-top: ${getStatusBarHeight() + 24}px;
-  background-color: #28262e;
-
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  padding: 24px;
+  background-color: #28262e;
+  padding-top: ${getStatusBarHeight() + 24}px;
 `;
 
 export const HeaderTitle = styled.Text.attrs({
