@@ -15,8 +15,28 @@ export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
 `;
 
+export const Header = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const BackButton = styled(RectButton)`
   margin-top: 40px;
+`;
+
+export const LogoutButton = styled.TouchableOpacity`
+  margin-top: 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LogoutButtonText = styled.Text`
+  color: #999591;
+  font-size: 18px;
+  margin-right: 12px;
+  font-family: 'RobotoSlab-Regular';
 `;
 
 export const UserAvatarButton = styled(RectButton)`
