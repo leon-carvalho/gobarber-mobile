@@ -12,6 +12,15 @@ interface ProviderNameProps {
   selected: boolean;
 }
 
+interface HourProps {
+  available: boolean;
+  selected: boolean;
+}
+
+interface HourTextProps {
+  selected: boolean;
+}
+
 export const Container = styled.View`
   flex: 1;
 `;
@@ -34,6 +43,8 @@ export const HeaderTitle = styled.Text`
   margin-left: 16px;
   font-family: 'RobotoSlab-Medium';
 `;
+
+export const Content = styled.ScrollView``;
 
 export const UserAvatar = styled.Image`
   width: 56px;
@@ -68,7 +79,7 @@ export const ProviderAvatar = styled.Image`
   background-color: ${(props) => (props.selected ? '#f4ede8' : '#c4cdc811')};
 `;
 
-export const ProviderName = styled.Text`
+export const ProviderName = styled.Text<ProviderNameProps>`
   margin-left: 8px;
   font-family: 'RobotoSlab-Medium';
   color: ${(props) => (props.selected ? '#232129' : '#ff9900')};
@@ -97,4 +108,39 @@ export const OpenDatePickerButtonText = styled.Text`
   color: #232129;
   font-size: 16px;
   font-family: 'RobotoSlab-Medium';
+`;
+
+export const Schedule = styled.View`
+  padding: 24px 0 16px;
+`;
+
+export const Section = styled.View`
+  margin-bottom: 24px;
+`;
+
+export const SectionTitle = styled.Text`
+  font-size: 18px;
+  color: #999591;
+  margin: 0 24px 12px;
+  font-family: 'RobotoSlab-Regular';
+`;
+
+export const SectionContent = styled.ScrollView.attrs({
+  horizontal: true,
+  showsHorizontalScrollIndicator: false,
+  contentContainerStyle: { paddingHorizontal: 24 },
+})``;
+
+export const Hour = styled(RectButton)<HourProps>`
+  padding: 12px;
+  margin-right: 8px;
+  border-radius: 10px;
+  opacity: ${(props) => (props.available ? 1 : 0.3)};
+  background-color: ${(props) => (props.selected ? '#ff9900' : '#3e3b47')};
+`;
+
+export const HourText = styled.Text`
+  font-size: 16px;
+  font-family: 'RobotoSlab-Regular';
+  color: ${(props) => (props.selected ? '#232129' : '#f4ede8')};
 `;
