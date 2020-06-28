@@ -93,14 +93,18 @@ Principais ferramentas usadas na construção do projeto:
 - Yup
 - EditorConfig
 - Styled Components
+- React Native Image Picker
 - React Native Reanimated
 - React Native Gesture Handler
+- React Native Vector Icons
 
 ## 👀 Demonstração <a name="demo"></a>
 
-Prints das telas da aplicação:
+Gif demonstrando a aplicação em execução:
 
-🚧 em breve 🚧
+<div align="center">
+  <img src="./github_docs/demo.gif" alt="application running demonstration" style="width: 250px;"/>
+</div>
 
 ## 🤔 Como contribuir para o projeto? <a name="contributing"></a>
 1. Faça um **fork** do projeto.
